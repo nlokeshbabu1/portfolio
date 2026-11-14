@@ -47,10 +47,23 @@ export function Projects() {
                     </ul>
                   </div>
 
-                  <p className="mt-6 flex items-center gap-2 rounded-lg border border-dashed border-line px-3 py-2.5 font-mono text-xs text-muted">
-                    <FolderGit2 className="h-4 w-4 shrink-0" aria-hidden="true" />
-                    Repository will be linked here once public
-                  </p>
+                  {project.websiteUrl ? (
+                    <a
+                      href={project.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 flex items-center justify-between gap-2 rounded-lg border border-accent-line bg-accent-soft px-3 py-2.5 font-mono text-xs text-accent transition-colors hover:bg-accent/10"
+                      aria-label={`Open ${project.name} website (opens in a new tab)`}
+                    >
+                      <span>{project.websiteUrl}</span>
+                      <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    </a>
+                  ) : (
+                    <p className="mt-6 flex items-center gap-2 rounded-lg border border-dashed border-line px-3 py-2.5 font-mono text-xs text-muted">
+                      <FolderGit2 className="h-4 w-4 shrink-0" aria-hidden="true" />
+                      Repository will be linked here once public
+                    </p>
+                  )}
                 </div>
 
                 <div className="rounded-xl border border-line bg-bg-deep/70 p-5 sm:p-6">

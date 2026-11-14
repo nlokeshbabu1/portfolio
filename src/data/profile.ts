@@ -254,6 +254,7 @@ interface Project {
   capabilities: string[];
   stack: string[];
   repositoryUrl?: string;
+  websiteUrl?: string;
 }
 
 const projects: Project[] = [
@@ -290,6 +291,7 @@ const projects: Project[] = [
       "Docker",
     ],
     repositoryUrl: "",
+    websiteUrl: "https://www.devarchai.xyz/",
   },
 ];
 
